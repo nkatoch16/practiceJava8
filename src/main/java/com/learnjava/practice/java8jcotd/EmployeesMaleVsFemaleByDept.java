@@ -1,0 +1,14 @@
+package com.learnjava.practice.java8jcotd;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+//Query 10 : How many male and female employees are there in the sales and marketing team?
+public class EmployeesMaleVsFemaleByDept {
+    public static void main(String[] args) {
+        List<Employee> employees = EmployeeUtil.employees();
+        System.out.println(employees.stream()
+                .filter(e->e.getDepartment().equalsIgnoreCase("Sales And Marketing"))
+                .collect(Collectors.groupingBy(Employee::getGender, Collectors.counting())));
+    }
+}
