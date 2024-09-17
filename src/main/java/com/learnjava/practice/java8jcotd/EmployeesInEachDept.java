@@ -8,6 +8,9 @@ public class EmployeesInEachDept {
     public static void main(String[] args) {
         List<Employee> employees = EmployeeUtil.employees();
 
-        System.out.println(employees.stream().collect(Collectors.groupingBy(Employee::getDepartment, Collectors.counting())));
+        System.out.println(employees.stream().
+                collect(Collectors
+                        .groupingBy(Employee::getDepartment,
+                                Collectors.counting())));
     }
 }
